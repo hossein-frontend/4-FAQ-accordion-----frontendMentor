@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+/* -------------------------------- CSS RESET ------------------------------- */
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  overflow: hidden;
+}
+:root {
+  --White: hsl(0, 0%, 100%);
+  --Light-pink: hsl(275, 100%, 97%);
+  --Grayish-purple: hsl(292, 16%, 49%);
+  --Dark-purple: hsl(292, 42%, 14%);
+}
+
+body {
+  font-family: "Work sans", sans-serif;
+  min-height: 100vh;
+  line-height: 1.6;
+
+  container-type: inline-size;
+  font-size: 1.6rem;
+  background-size: cover;
+  background: linear-gradient(to bottom, transparent 40%, var(--Light-pink) 40%),
+    url(assets/images/background-pattern-desktop.svg);
+  display: grid;
+  place-items: center;
+  grid-auto-rows: 700px;
+  grid-template-columns: 1fr [faq-start] 70% [faq-end] 1fr;
+}
+.faq {
+  width: clamp(355px, 75%, 550px);
+  grid-column: faq-start / faq-end;
+  outline: 10px solid transparent;
+  aspect-ratio: 1/0.5;
+  border-radius: 9px;
+  background-color: white;
+  padding: 2rem;
+}
+.heading {
+  font-size: clamp(4.2rem, 5vw, 5rem);
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  color: var(--Dark-purple);
+}
+details:not(:last-child) {
+  border-bottom: 1px solid var(--Light-pink);
+}
+summary {
+  list-style: none;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  padding: 1rem;
+  gap: 2rem;
+  user-select: none;
+}
+summary::after {
+  content: "";
+  display: block;
+  width: 20px;
+  background-size: cover;
+  height: 20px;
+  background-image: url(assets/images/icon-plus.svg);
+}
+
+p {
+  padding-block: 1rem;
+  font-size: 1.4rem;
+  color: var(--Grayish-purple);
+}
+
+details[open] > summary::after {
+  background-image: url(assets/images/icon-minus.svg);
+}
+
+.faq__item {
+  display: grid;
+  gap: 1rem;
+}
