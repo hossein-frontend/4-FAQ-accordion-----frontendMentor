@@ -12,7 +12,6 @@
 
 html {
   font-size: 62.5%;
-  overflow: hidden;
 }
 :root {
   --White: hsl(0, 0%, 100%);
@@ -29,7 +28,7 @@ body {
   container-type: inline-size;
   font-size: 1.6rem;
   background-size: cover;
-  background: linear-gradient(to bottom, transparent 40%, var(--Light-pink) 40%),
+  background: linear-gradient(to bottom, transparent 35%, var(--Light-pink) 35%),
     url(assets/images/background-pattern-desktop.svg);
   display: grid;
   place-items: center;
@@ -37,11 +36,12 @@ body {
   grid-template-columns: 1fr [faq-start] 70% [faq-end] 1fr;
 }
 .faq {
-  width: clamp(355px, 75%, 550px);
+  width: clamp(355px, 70%, 550px);
   grid-column: faq-start / faq-end;
   outline: 10px solid transparent;
   aspect-ratio: 1/0.5;
   border-radius: 9px;
+  margin-bottom: 40px;
   background-color: white;
   padding: 2rem;
 }
